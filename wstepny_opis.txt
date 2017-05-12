@@ -1,0 +1,2 @@
+Program „Fiszki”
+Jest to program s³u¿¹cy do æwiczenia s³ownictwa. Po zalogowaniu mo¿na tworzyæ swoje w³asne zbiory par wyrazów. Do wyboru s¹ dwa tryby odpytywania. Pierwszy z nich to æwiczenia. W tym trybie przy udzieleniu niepoprawnej odpowiedzi s³owo zostaje w zbiorze pytañ. Drugim trybem jest test, w którym nie ma mo¿liwoœci poprawy z³ych odpowiedzi. Pary wyrazów s¹ losowo wybierane z listy.
