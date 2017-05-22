@@ -1,5 +1,12 @@
-﻿################################################################################
-# Ten plik .gitignore został utworzony automatycznie przez Microsoft(R) Visual Studio.
-################################################################################
-
-/.vs
+﻿/.vs
+/flashcards/obj
+/flashcards/obj
+/flashcards/obj/Release
+/flashcards/obj/Release/MainWindow.g.cs
+/flashcards/obj/Release/flashcards_MarkupCompile.lref
+/flashcards/obj/Release/flashcards_MarkupCompile.cache
+/flashcards/obj/Release/CoreCompileInputs.cache
+/flashcards/obj/Release/App.g.cs
+/flashcards/obj
+/flashcards/obj
+/flashcards/obj/Debug
