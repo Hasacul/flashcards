@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{59875FBA-5050-43B4-8440-2596A65EADC8}</ProjectGuid>
+    <ProjectGuid>{3567BEE1-67FB-43B3-A55D-7AB4C2E63255}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>flashcards</RootNamespace>
-    <AssemblyName>flashcards</AssemblyName>
+    <RootNamespace>Flashcards</RootNamespace>
+    <AssemblyName>Flashcards</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -52,6 +52,7 @@
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

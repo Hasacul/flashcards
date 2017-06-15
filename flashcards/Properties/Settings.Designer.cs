@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace flashcards.Properties
+namespace Flashcards.Properties
 {
 
 
