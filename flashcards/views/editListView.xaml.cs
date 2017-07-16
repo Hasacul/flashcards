@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Flashcards.viewmodel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,9 +26,30 @@ namespace Flashcards.views
             InitializeComponent();
         }
 
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
+        private void editListButton_Click(object sender, RoutedEventArgs e)
+        {
+            editListViewModel ELV = (editListViewModel)DataContext;
+            if (editList.SelectedItem != null)
+            {
+                ELV.getSelectedFile(editList.SelectedItem.ToString());
+            }
+        }
+
+        private void addNewListButton_Click(object sender, RoutedEventArgs e)
+        {
+            editListViewModel ELV = (editListViewModel)DataContext;
+            ELV.addNewList(addNewListName.Text);
+
+        }
+
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            editListViewModel ELV = (editListViewModel)DataContext;
+            if (editList.SelectedItem != null)
+            {
+                ELV.removeList(editList.SelectedItem.ToString());
+            }
         }
     }
 }

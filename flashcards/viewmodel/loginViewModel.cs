@@ -11,16 +11,17 @@ namespace Flashcards.viewmodel
     public class loginViewModel
     {
         private bool _loggedIn;
-        private string loginUserName;
+        static private string loginUserName;
 
         public loginViewModel()
         {
             _loggedIn = false;
         }
 
-        private bool tryToLogin(string login)
+        private bool tryToLogin(string login,fileManager FC)
         {
-            if (login == "user")
+
+            if (FC.doesProfileExists(login, FC.getProfiles()))
             {
                 return true;
             }
@@ -35,30 +36,45 @@ namespace Flashcards.viewmodel
             return _loggedIn;
         }
 
+        public string getLoginUserName()
+        {
+            return loginUserName;
+        }
+
         public void setLoggedStatus(string login)
         {
-            _loggedIn = tryToLogin(login.ToString());
+            fileManager FC = new fileManager();
+            _loggedIn = tryToLogin(login.ToString(),FC);
 
             if (_loggedIn)
             {
+                loginUserName = login;
                 foreach (Window window in Application.Current.Windows)
                 {
                     if (window.GetType() == typeof(MainWindow))
                     {
-                        (window as MainWindow).changeToLoggedInMenu();
+                        (window as MainWindow).changeToLoggedInMenu(login);
                     }
                 }
             }
             else
             {
-                fileCreator FC = new fileCreator();
                 FC.createNewProfile(login);
+                loginUserName = login;
+                foreach (Window window in Application.Current.Windows)
+                {
+                    if (window.GetType() == typeof(MainWindow))
+                    {
+                        (window as MainWindow).changeToLoggedInMenu(login);
+                    }
+                }
             }
         }
 
         public void logout()
         {
             _loggedIn = false;
+            loginUserName = "";
             foreach (Window window in Application.Current.Windows)
             {
                 if (window.GetType() == typeof(MainWindow))
@@ -67,11 +83,5 @@ namespace Flashcards.viewmodel
                 }
             }
         }
-
-        public void createNewUser(string userName)
-        {
-
-        }
-
     }
 }
