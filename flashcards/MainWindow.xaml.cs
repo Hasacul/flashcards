@@ -72,5 +72,15 @@ namespace Flashcards
             DataContext = new loginViewModel();
 
         }
+
+        private void test_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new testViewModel();
+        }
+ 
+        private void practice_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new practiceViewModel();
+        }
     }
 }

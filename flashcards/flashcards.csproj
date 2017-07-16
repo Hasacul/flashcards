@@ -73,6 +73,9 @@
     <Compile Include="viewmodel\addWordsViewModel.cs" />
     <Compile Include="viewmodel\editListViewModel.cs" />
     <Compile Include="viewmodel\loginViewModel.cs" />
+    <Compile Include="viewmodel\practiceViewModel.cs" />
+    <Compile Include="viewmodel\StartTestViewModel.cs" />
+    <Compile Include="viewmodel\testViewModel.cs" />
     <Compile Include="views\addListView.xaml.cs">
       <DependentUpon>addListView.xaml</DependentUpon>
     </Compile>
@@ -84,6 +87,15 @@
     </Compile>
     <Compile Include="views\loginView.xaml.cs">
       <DependentUpon>loginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\PracticeView.xaml.cs">
+      <DependentUpon>PracticeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\StartTestView.xaml.cs">
+      <DependentUpon>StartTestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\testView.xaml.cs">
+      <DependentUpon>testView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -111,6 +123,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="views\loginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\PracticeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\StartTestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\testView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
