@@ -51,7 +51,7 @@ namespace Flashcards
             DataContext = new addWordsViewModel();
         }
 
-        public void changeToLoggedInMenu()
+        public void changeToLoggedInMenu(string login)
         {
 
             Button btn = (Button)LogicalTreeHelper.FindLogicalNode(StackPanelMain, "loginButton");
@@ -59,7 +59,8 @@ namespace Flashcards
             btn.Click -= new RoutedEventHandler(logIn_Click);
             btn.Click += new RoutedEventHandler(logout_Click);
             DataContext = new addListViewModel();
-
+            TextBlock loggedAsText=(TextBlock)LogicalTreeHelper.FindLogicalNode(StackPanelMain, "loggedLabel");
+            loggedAsText.Text = "Logged: " + login;
         }
 
         public void changeToLoggedOutMenu()
@@ -70,8 +71,11 @@ namespace Flashcards
             btn.Click -= new RoutedEventHandler(logout_Click);
             btn.Click += new RoutedEventHandler(logIn_Click);
             DataContext = new loginViewModel();
-
+            TextBlock loggedAsText = (TextBlock)LogicalTreeHelper.FindLogicalNode(StackPanelMain, "loggedLabel");
+            loggedAsText.Text = "";
         }
+
+        
 
         private void test_Click(object sender, RoutedEventArgs e)
         {

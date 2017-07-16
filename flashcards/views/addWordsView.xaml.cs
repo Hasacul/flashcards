@@ -1,4 +1,5 @@
 ﻿using Flashcards.files;
+using Flashcards.viewmodel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,16 +31,18 @@ namespace Flashcards.views
         {
             string blokDodania = textAddInput.Text;
             //showTextContent.Text = blokDodania;
-            fileCreator fc = new fileCreator();
+            fileManager fc = new fileManager();
+            loginViewModel loginVM = new loginViewModel();
             fc.addToContent(blokDodania);
-            fc.saveFile("buba");
+            fc.saveFile("buba",loginVM.getLoginUserName());
             //showTextContent.Text = fc.getContents();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            fileCreator fc = new fileCreator();
-            showTextContent.Text = fc.readFromFile("buba");
+            fileManager fc = new fileManager();
+            loginViewModel loginVM = new loginViewModel();
+            //showTextContent.Text = fc.readFromFile("buba", loginVM.getLoginUserName());
         }
     }
 }

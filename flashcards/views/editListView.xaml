@@ -8,14 +8,19 @@
       d:DesignHeight="300" d:DesignWidth="300">
 
     <Grid>
-        <TextBlock x:Name="editListLabel" HorizontalAlignment="Left" Margin="98,52,0,0" TextWrapping="Wrap" Text="Choose list to edit:" VerticalAlignment="Top"/>
-        <ListView x:Name="editList" HorizontalAlignment="Left" Height="100" Margin="38,88,0,0" VerticalAlignment="Top" Width="236" SelectionChanged="ListView_SelectionChanged">
+        <TextBlock x:Name="editListLabel" HorizontalAlignment="Left" Margin="106,24,0,0" TextWrapping="Wrap" Text="Choose list to edit:" VerticalAlignment="Top"/>
+        <ListView x:Name="editList" HorizontalAlignment="Left" Height="100" Margin="40,56,0,0" VerticalAlignment="Top" Width="236" ItemsSource="{Binding ListViewItems}" MinWidth="200">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn Header="Files"  Width="auto" DisplayMemberBinding="{Binding}"/>
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button x:Name="editListButton" Content="Edit" HorizontalAlignment="Left" Margin="52,168,0,0" VerticalAlignment="Top" Width="76" Click="editListButton_Click"/>
+        <TextBox x:Name="addNewListName" HorizontalAlignment="Left" Height="23" Margin="98,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="addNewListLabel" HorizontalAlignment="Left" Margin="22,249,0,0" TextWrapping="Wrap" Text="Add new list: " VerticalAlignment="Top"/>
+        <Button x:Name="addNewListButton" Content="Add" HorizontalAlignment="Left" Margin="224,249,0,0" VerticalAlignment="Top" Width="52" Click="addNewListButton_Click"/>
+        <Button x:Name="deleteButton" Content="Delete" HorizontalAlignment="Left" Margin="201,168,0,0" VerticalAlignment="Top" Width="75" Click="deleteButton_Click"/>
 
     </Grid>
 </UserControl>
