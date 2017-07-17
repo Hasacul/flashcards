@@ -23,6 +23,9 @@
         <DataTemplate x:Name="AddWordsTemplate" DataType="{x:Type viewmodel:addWordsViewModel}">
             <views:addWordsView DataContext="{Binding}"></views:addWordsView>
         </DataTemplate>
+        <DataTemplate x:Name="editSelectedListTemplate" DataType="{x:Type viewmodel:editSelectedListViewModel}">
+            <views:editSelectedListView DataContext="{Binding}"></views:editSelectedListView>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
