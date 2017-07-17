@@ -59,7 +59,8 @@ namespace Flashcards.files
 
         public List<String> getProfiles()
         {
-            string[] directories = Directory.GetDirectories(this.folderLocation);
+            Directory.CreateDirectory(folderLocation);                                                          //creates profiles if not exists
+            string[] directories = Directory.GetDirectories(folderLocation);
             return directories.ToList();
         }
 
