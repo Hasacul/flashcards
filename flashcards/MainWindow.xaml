@@ -38,6 +38,9 @@
 
 
 
+        <DataTemplate x:Name="editSelectedListTemplate" DataType="{x:Type viewmodel:editSelectedListViewModel}">
+            <views:editSelectedListView DataContext="{Binding}"></views:editSelectedListView>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -58,9 +61,7 @@
         <DockPanel x:Name="MainMenu" Background="Silver" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5">
             <StackPanel x:Name="StackPanelMain">
                 <Button x:Name="loginButton" Content="Log in" Click="logIn_Click"></Button>
-                <Button Content="Add List" Click="addList_Click"></Button>
                 <Button Content="Manage lists" Click="editList_Click"></Button>
-                <Button Content="Add Words" Click="addWords_Click"></Button>
                 <Button Content="Test" Click="test_Click"></Button>
                 <Button Content="Practice" Click="practice_Click"></Button>
                 <TextBlock x:Name="loggedLabel" />

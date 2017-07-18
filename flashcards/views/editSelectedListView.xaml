@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Flashcards.views.editSelectedListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Flashcards.views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <ListView HorizontalAlignment="Left" Height="191" Margin="10,43,0,0" VerticalAlignment="Top" Width="213">
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <Button x:Name="addNewPairButton" Content="Add new &#xD;&#xA;pair" HorizontalAlignment="Left" Margin="232,250,0,0" VerticalAlignment="Top" Width="58" Height="40" Click="addNewPairButton_Click"/>
+        <Button x:Name="saveChangesButton" Content="Save" HorizontalAlignment="Left" Margin="228,43,0,0" VerticalAlignment="Top" Width="62" Click="saveChangesButton_Click"/>
+        <Button x:Name="cancelChangesButton" Content="Cancel" HorizontalAlignment="Left" Margin="228,112,0,0" VerticalAlignment="Top" Width="62" Click="cancelChangesButton_Click"/>
+        <TextBox x:Name="newPairWord1" HorizontalAlignment="Left" Height="23" Margin="10,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="89"/>
+        <TextBox x:Name="newPairWord2" HorizontalAlignment="Left" Height="23" Margin="116,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90"/>
+        <TextBlock x:Name="newPairLabel" HorizontalAlignment="Left" Margin="82,246,0,0" TextWrapping="Wrap" Text="New Pair:" VerticalAlignment="Top"/>
+
+    </Grid>
+</UserControl>

@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Flashcards.viewmodel
 {
@@ -39,6 +40,13 @@ namespace Flashcards.viewmodel
         public void getSelectedFile(string v)
         {
             List<string> fileContent = _FM.readFromFile(v, _profile);
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(MainWindow))
+                {
+                    (window as MainWindow).DataContext=new editSelectedListViewModel();
+                }
+            }
         }
 
         public void refreshList()
