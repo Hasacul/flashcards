@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <ListView HorizontalAlignment="Left" Height="191" Margin="51,47,0,0" VerticalAlignment="Top" Width="218">
+        <ListView HorizontalAlignment="Left" Height="191" Margin="10,43,0,0" VerticalAlignment="Top" Width="213">
 
             <ListView.View>
                 <GridView>
@@ -16,9 +16,12 @@
             </ListView.View>
 
         </ListView>
-        <Button x:Name="addNewPairButton" Content="Add new pair" HorizontalAlignment="Left" Margin="176,10,0,0" VerticalAlignment="Top" Width="93"/>
-        <Button x:Name="saveChangesButton" Content="Save" HorizontalAlignment="Left" Margin="194,259,0,0" VerticalAlignment="Top" Width="75" Click="saveChangesButton_Click"/>
-        <Button x:Name="cancelChangesButton" Content="Cancel" HorizontalAlignment="Left" Margin="51,259,0,0" VerticalAlignment="Top" Width="75" Click="cancelChangesButton_Click"/>
+        <Button x:Name="addNewPairButton" Content="Add new &#xD;&#xA;pair" HorizontalAlignment="Left" Margin="232,250,0,0" VerticalAlignment="Top" Width="58" Height="40" Click="addNewPairButton_Click"/>
+        <Button x:Name="saveChangesButton" Content="Save" HorizontalAlignment="Left" Margin="228,43,0,0" VerticalAlignment="Top" Width="62" Click="saveChangesButton_Click"/>
+        <Button x:Name="cancelChangesButton" Content="Cancel" HorizontalAlignment="Left" Margin="228,112,0,0" VerticalAlignment="Top" Width="62" Click="cancelChangesButton_Click"/>
+        <TextBox x:Name="newPairWord1" HorizontalAlignment="Left" Height="23" Margin="10,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="89"/>
+        <TextBox x:Name="newPairWord2" HorizontalAlignment="Left" Height="23" Margin="116,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90"/>
+        <TextBlock x:Name="newPairLabel" HorizontalAlignment="Left" Margin="82,246,0,0" TextWrapping="Wrap" Text="New Pair:" VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>

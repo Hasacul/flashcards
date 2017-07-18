@@ -46,9 +46,7 @@
         <DockPanel x:Name="MainMenu" Background="Silver" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5">
             <StackPanel x:Name="StackPanelMain">
                 <Button x:Name="loginButton" Content="Log in" Click="logIn_Click"></Button>
-                <Button Content="Add List" Click="addList_Click"></Button>
                 <Button Content="Manage lists" Click="editList_Click"></Button>
-                <Button Content="Add Words" Click="addWords_Click"></Button>
                 <TextBlock x:Name="loggedLabel" />
             </StackPanel>
         </DockPanel>

@@ -35,6 +35,7 @@ namespace Flashcards.files
             {
                 MessageBox.Show("Invalid profile name or file name.");
             }
+            //System.IO.File.WriteAllLines(@"C:\Users\Public\TestFolder\WriteLines.txt", lines);
         }
 
         public void addToContent(string stringToAdd)
