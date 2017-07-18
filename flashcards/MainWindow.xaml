@@ -32,6 +32,9 @@
         <DataTemplate x:Name="PracticeTemplate" DataType="{x:Type viewmodel:practiceViewModel}">
             <views:PracticeView  DataContext="{Binding}"></views:PracticeView>
         </DataTemplate>
+        <DataTemplate x:Name="startPracticeTemplate" DataType="{x:Type viewmodel:startPracticeViewModel}">
+            <views:startPracticeView  DataContext="{Binding}"></views:startPracticeView>
+        </DataTemplate>
 
 
 

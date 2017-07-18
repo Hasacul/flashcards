@@ -38,7 +38,7 @@
             FontSize="18" 
             MaxHeight="30" 
             Grid.Row="2" 
-            Grid.Column="1" 
+            Grid.Column="1" Click="startPractice_Click" 
             />
     </Grid>
 </UserControl>

@@ -16,24 +16,13 @@ using System.Windows.Shapes;
 namespace Flashcards.views
 {
     /// <summary>
-    /// Logika interakcji dla klasy PracticeView.xaml
+    /// Logika interakcji dla klasy startPracticeView.xaml
     /// </summary>
-    public partial class PracticeView : UserControl
+    public partial class startPracticeView : UserControl
     {
-        public PracticeView()
+        public startPracticeView()
         {
             InitializeComponent();
-        }
-
-        private void startPractice_Click(object sender, RoutedEventArgs e)
-        {
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window.GetType() == typeof(MainWindow))
-                {
-                    (window as MainWindow).DataContext = new startPracticeView();
-                }
-            }
         }
     }
 }
