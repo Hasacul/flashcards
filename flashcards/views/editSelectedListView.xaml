@@ -6,12 +6,30 @@
              xmlns:local="clr-namespace:Flashcards.views"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <ListView HorizontalAlignment="Left" Height="191" Margin="10,43,0,0" VerticalAlignment="Top" Width="213">
 
+    <Grid>
+        <ListView ItemsSource="{Binding}" Grid.IsSharedSizeScope="True" x:Name="wordList" HorizontalAlignment="Left" Height="191" Margin="10,43,0,0" VerticalAlignment="Top" Width="213">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBox Text="{Binding Text}"></TextBox>
+                </DataTemplate>
+            </ListView.ItemTemplate>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn x:Name="listViewGridHeader1" Header="Word 1" Width="105">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding Text}"></TextBox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn x:Name="listViewGridHeader2" Header="Word 2" Width="105">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding Text2}"></TextBox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
 

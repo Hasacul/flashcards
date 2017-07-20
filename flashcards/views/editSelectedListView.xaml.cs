@@ -28,26 +28,40 @@ namespace Flashcards.views
 
         private void cancelChangesButton_Click(object sender, RoutedEventArgs e)
         {
-            foreach (Window window in Application.Current.Windows)
+            editSelectedListViewModel VM = new editSelectedListViewModel();
+            VM.readItems(wordList);
+            /*foreach (Window window in Application.Current.Windows)
             {
                 if (window.GetType() == typeof(MainWindow))
                 {
                     (window as MainWindow).DataContext = new editListViewModel();
                 }
-            }
+            }*/
         }
 
         private void saveChangesButton_Click(object sender, RoutedEventArgs e)
         {
-            foreach (Window window in Application.Current.Windows)
+            editSelectedListViewModel VM = new editSelectedListViewModel();
+            VM.tryIt(wordList);
+
+            /*foreach (Window window in Application.Current.Windows)
             {
                 if (window.GetType() == typeof(MainWindow))
                 {
                     (window as MainWindow).DataContext = new editListViewModel();
                 }
+            }*/
+        }
+        class testerTextBox
+        {
+            public string Text { get; set; }
+            public string Text2 { get; set; }
+            public testerTextBox(string str, string str2)
+            {
+                Text = str;
+                Text2 = str2;
             }
         }
-
         private void addNewPairButton_Click(object sender, RoutedEventArgs e)
         {
             string word1 = newPairWord1.Text;
