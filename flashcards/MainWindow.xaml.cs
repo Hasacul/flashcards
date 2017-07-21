@@ -17,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace Flashcards
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -58,7 +55,7 @@ namespace Flashcards
             btn.Content = "Log out";
             btn.Click -= new RoutedEventHandler(logIn_Click);
             btn.Click += new RoutedEventHandler(logout_Click);
-            DataContext = new addListViewModel();
+            DataContext = new editListViewModel();
             TextBlock loggedAsText=(TextBlock)LogicalTreeHelper.FindLogicalNode(StackPanelMain, "loggedLabel");
             loggedAsText.Text = "Logged: " + login;
         }
@@ -74,8 +71,6 @@ namespace Flashcards
             TextBlock loggedAsText = (TextBlock)LogicalTreeHelper.FindLogicalNode(StackPanelMain, "loggedLabel");
             loggedAsText.Text = "";
         }
-
-        
 
         private void test_Click(object sender, RoutedEventArgs e)
         {

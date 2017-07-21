@@ -55,6 +55,20 @@ namespace Flashcards.views
             editSelectedListViewModel eslvm = new editSelectedListViewModel();
             eslvm.addShowPair(userInput1, userInput2, wordList);
 
+            /*string word1 = newPairWord1.Text;
+            string word2 = newPairWord2.Text;
+            editSelectedListViewModel VM = new editSelectedListViewModel();
+            VM.addNewItem(wordList, word1, word2);*/
+
+        }
+
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (wordList.SelectedItem != null)
+            {
+                editSelectedListViewModel VM = new editSelectedListViewModel();
+                VM.removeItem(wordList, wordList.SelectedIndex);
+            }
         }
     }
 }

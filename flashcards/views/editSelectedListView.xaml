@@ -6,13 +6,27 @@
              xmlns:local="clr-namespace:Flashcards.views"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+
+
     <Grid>
-        <ListView x:Name="wordList" HorizontalAlignment="Left" Height="191" Margin="10,43,0,0" VerticalAlignment="Top" Width="213">
+        <ListView ItemsSource="{Binding}" Grid.IsSharedSizeScope="True" x:Name="wordList" HorizontalAlignment="Left" Height="191" Margin="10,43,0,0" VerticalAlignment="Top" Width="213">
 
             <ListView.View>
-                <GridView >
-                    <GridViewColumn Header="word1" Width="100" DisplayMemberBinding="{Binding word1}"/>
-                    <GridViewColumn Header="word2" Width="100" DisplayMemberBinding="{Binding word2}"/>
+                <GridView>
+                    <GridViewColumn x:Name="listViewGridHeader1" Header="Word 1" Width="105">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding word1}"></TextBox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn x:Name="listViewGridHeader2" Header="Word 2" Width="105">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding word2}"></TextBox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
 
@@ -24,6 +38,7 @@
         <TextBox x:Name="newPairWord1" HorizontalAlignment="Left" Height="23" Margin="10,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="89"/>
         <TextBox x:Name="newPairWord2" HorizontalAlignment="Left" Height="23" Margin="116,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90"/>
         <TextBlock x:Name="newPairLabel" HorizontalAlignment="Left" Margin="82,246,0,0" TextWrapping="Wrap" Text="New Pair:" VerticalAlignment="Top"/>
+        <Button x:Name="deleteButton" Content="Delete" HorizontalAlignment="Left" Margin="228,186,0,0" VerticalAlignment="Top" Width="62" Click="deleteButton_Click"/>
 
     </Grid>
 </UserControl>

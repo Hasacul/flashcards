@@ -8,7 +8,7 @@ using System.Windows.Controls;
 
 namespace Flashcards.viewmodel
 {
-    public class testViewModel
+    public class testViewModel:listOfListsClass
     {
         
         
