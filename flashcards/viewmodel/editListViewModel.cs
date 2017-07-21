@@ -10,30 +10,10 @@ using System.Windows;
 
 namespace Flashcards.viewmodel
 {
-    class editListViewModel
+    class editListViewModel:listOfListsClass
     {
-        private string _profile;
-        private fileManager _FM;
         public editListViewModel()
         {
-            ListViewItems = new ObservableCollection<string>();
-            _FM = new fileManager();
-            loginViewModel loginVM = new loginViewModel();
-            _profile = loginVM.getLoginUserName();
-            addFilesToList(_FM.getFiles(_profile));
-        }
-
-        public ObservableCollection<string> ListViewItems
-        {
-            get;set;
-        }
-
-        public void addFilesToList(List<string> files)
-        {
-            foreach(string str in files)
-            {
-                ListViewItems.Add(str);
-            }
 
         }
 

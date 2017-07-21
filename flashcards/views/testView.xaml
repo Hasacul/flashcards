@@ -31,9 +31,16 @@
             VerticalAlignment="Top" 
             Grid.Column="1"/>
         <ListView 
+            ItemsSource="{Binding ListViewItems}"
             Margin="9,0,5.066,0"
             Grid.Row="1" 
-            Grid.Column="1"/>
+            Grid.Column="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Files"  Width="auto" DisplayMemberBinding="{Binding}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
         <Button 
             Content=" Start test! ->" 
             Margin="9,10,5.066,30" 

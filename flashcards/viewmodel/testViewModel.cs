@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Flashcards.viewmodel
 {
-    public class testViewModel
+    public class testViewModel:listOfListsClass
     {
     }
 }
