@@ -73,6 +73,7 @@
     <Compile Include="viewmodel\addWordsViewModel.cs" />
     <Compile Include="viewmodel\editListViewModel.cs" />
     <Compile Include="viewmodel\editSelectedListViewModel.cs" />
+    <Compile Include="files\listOfListsClass.cs" />
     <Compile Include="viewmodel\loginViewModel.cs" />
     <Compile Include="viewmodel\practiceViewModel.cs" />
     <Compile Include="viewmodel\startPracticeViewModel.cs" />
