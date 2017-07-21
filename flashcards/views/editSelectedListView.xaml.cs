@@ -50,8 +50,11 @@ namespace Flashcards.views
 
         private void addNewPairButton_Click(object sender, RoutedEventArgs e)
         {
-            string word1 = newPairWord1.Text;
-            string word2 = newPairWord2.Text;
+            string userInput1 = newPairWord1.Text;
+            string userInput2 = newPairWord2.Text;
+            editSelectedListViewModel eslvm = new editSelectedListViewModel();
+            eslvm.addShowPair(userInput1, userInput2, wordList);
+
         }
     }
 }

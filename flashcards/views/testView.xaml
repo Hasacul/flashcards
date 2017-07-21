@@ -18,30 +18,39 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
-            <RowDefinition/>
+            <RowDefinition Height="77*"/>
+            <RowDefinition Height="83*"/>
             <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
         <Label 
             Content="Choose test from the list :" 
-            Margin="9,20,5.066,0" 
+            Margin="9,20,5,0" 
             FontSize="18"  
             Foreground="Black" 
             Grid.Row="0" 
             Height="30" 
             VerticalAlignment="Top" 
             Grid.Column="1"/>
-        <ListView 
-            Margin="9,0,5.066,0"
+        <ListView x:Name="listTest" 
+            Margin="9,0,5,0"
             Grid.Row="1" 
-            Grid.Column="1"/>
+            Grid.Column="1" 
+            Grid.RowSpan="2"
+               >
+            <ListView.View>
+                <GridView >
+
+                </GridView>
+            </ListView.View>
+        </ListView>
         <Button 
             Content=" Start test! ->" 
-            Margin="9,10,5.066,30" 
+            Margin="9,10,5,30" 
             Width="Auto" 
             MinHeight="20" 
             FontSize="18" 
             MaxHeight="30" 
-            Grid.Row="2" 
+            Grid.Row="3" 
             Grid.Column="1" 
             Click="StartTestClick"/>
     </Grid>

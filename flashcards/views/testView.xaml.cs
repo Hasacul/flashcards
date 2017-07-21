@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Flashcards.viewmodel;
+using Flashcards.files;
 
 namespace Flashcards.views
 {
@@ -24,6 +25,7 @@ namespace Flashcards.views
         public testView()
         {
             InitializeComponent();
+
         }
 
         private void StartTestClick(object sender, RoutedEventArgs e)
@@ -36,6 +38,12 @@ namespace Flashcards.views
                 }
             }
             
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+
         }
     }
 }
