@@ -40,6 +40,7 @@
         <TextBox x:Name="newPairWord1" HorizontalAlignment="Left" Height="23" Margin="10,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="89"/>
         <TextBox x:Name="newPairWord2" HorizontalAlignment="Left" Height="23" Margin="116,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90"/>
         <TextBlock x:Name="newPairLabel" HorizontalAlignment="Left" Margin="82,246,0,0" TextWrapping="Wrap" Text="New Pair:" VerticalAlignment="Top"/>
+        <Button x:Name="deleteButton" Content="Delete" HorizontalAlignment="Left" Margin="228,186,0,0" VerticalAlignment="Top" Width="62" Click="deleteButton_Click"/>
 
     </Grid>
 </UserControl>
