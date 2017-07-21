@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace Flashcards.files
 {
-    class fileManager
+    public class fileManager
     {
         protected string fileName;
         protected string[] fileContent;                                         
