@@ -15,6 +15,10 @@ namespace Flashcards.files
         {
             return listWords;
         }
+        public void SetList(List<pairWords> l)
+        {
+            listWords = l;
+        }
 
         public void addItem(pairWords pair)
         {
