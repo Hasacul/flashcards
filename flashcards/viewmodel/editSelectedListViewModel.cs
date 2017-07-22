@@ -24,11 +24,24 @@ namespace Flashcards.viewmodel
     {
         listManager lm = new listManager();
 
-        public void addShowPair(string userInput1, string userInput2, ListView list)
+        public void addPair(string userInput1, string userInput2)
         {
 
             lm.addItem(new pairWords(userInput1, userInput2));
-            list.Items.Add(lm.getList());
+            
+        }
+        public void showList (ListView Wordlist)
+        {
+            Wordlist.Items.Clear();
+            foreach (pairWords opairWords in lm.getList())
+            {               
+                Wordlist.Items.Add(opairWords);
+            }
+        }
+        public void removeItem(ListView LV, int index)
+        {
+            lm.getList().RemoveAt(index);
+            
         }
         /*static public ObservableCollection<testerTextBox> ListOfElements;
 
@@ -40,49 +53,45 @@ namespace Flashcards.viewmodel
                 /*items.Add(new testerTextBox("item 1", "abc"));
                 items.Add(new testerTextBox("item 2", "def"));
                 items.Add(new testerTextBox("item 3", "ghi"));*/
-             /*   ListOfElements = items;
-            }
+        /*   ListOfElements = items;
+       }
 
-        }
+   }
 
-        public void tryIt(ListView LV)
-        {
+   public void tryIt(ListView LV)
+   {
 
-            LV.ItemsSource = ListOfElements;
-        }
+       LV.ItemsSource = ListOfElements;
+   }
 
-        public void readItems(ListView LV)
-        {
-            ListOfElements.Clear();
+   public void readItems(ListView LV)
+   {
+       ListOfElements.Clear();
 
-            foreach(testerTextBox item in LV.ItemsSource)
-            {
-                ListOfElements.Add(new testerTextBox(item.Text, item.Text2));
-            }
-            ListOfElements.Add(new testerTextBox("itemtested", "itemtested 2"));
-            tryIt(LV);
-        }
+       foreach(testerTextBox item in LV.ItemsSource)
+       {
+           ListOfElements.Add(new testerTextBox(item.Text, item.Text2));
+       }
+       ListOfElements.Add(new testerTextBox("itemtested", "itemtested 2"));
+       tryIt(LV);
+   }
 
-        public void addNewItem(ListView LV, string str1, string str2)
-        {
-            //ListOfElements.Clear();
+   public void addNewItem(ListView LV, string str1, string str2)
+   {
+       //ListOfElements.Clear();
 
-            /*if (LV.ItemsSource != null)
-            {
-                foreach (testerTextBox item in LV.ItemsSource)
-                {
-                    ListOfElements.Add(new testerTextBox(item.Text, item.Text2));
-                }
-            }*/
-         /*   ListOfElements.Add(new testerTextBox(str1, str2));
-            tryIt(LV);
-        }
+       /*if (LV.ItemsSource != null)
+       {
+           foreach (testerTextBox item in LV.ItemsSource)
+           {
+               ListOfElements.Add(new testerTextBox(item.Text, item.Text2));
+           }
+       }*/
+        /*   ListOfElements.Add(new testerTextBox(str1, str2));
+           tryIt(LV);
+       }
 
-        public void removeItem(ListView LV, int index)
-        {
-            ListOfElements.RemoveAt(index);
-            tryIt(LV);
-        }
-        */
+
+       */
     }
 }

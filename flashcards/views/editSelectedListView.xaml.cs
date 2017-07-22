@@ -52,9 +52,9 @@ namespace Flashcards.views
         {
             string userInput1 = newPairWord1.Text;
             string userInput2 = newPairWord2.Text;
-            editSelectedListViewModel eslvm = (editSelectedListViewModel)DataContext;
-            eslvm.addShowPair(userInput1, userInput2, wordList);
-
+            editSelectedListViewModel eslvm =(editSelectedListViewModel)DataContext;
+            eslvm.addPair(userInput1, userInput2);
+            eslvm.showList(wordList);
             /*string word1 = newPairWord1.Text;
             string word2 = newPairWord2.Text;
             editSelectedListViewModel VM = new editSelectedListViewModel();
@@ -64,11 +64,12 @@ namespace Flashcards.views
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)
         {
-            /*if (wordList.SelectedItem != null)
+            if (wordList.SelectedItem != null)
             {
-                editSelectedListViewModel VM = new editSelectedListViewModel();
-                VM.removeItem(wordList, wordList.SelectedIndex);
-            }*/
+                editSelectedListViewModel eslvm = (editSelectedListViewModel)DataContext;
+                eslvm.removeItem(wordList, wordList.SelectedIndex);
+                eslvm.showList(wordList);
+            }
         }
     }
     }
