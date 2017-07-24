@@ -33,19 +33,9 @@ namespace Flashcards
             new loginViewModel().logout();
         }
 
-        private void addList_Click(object sender, RoutedEventArgs e)
-        {
-            DataContext = new addListViewModel();
-        }
-
         private void editList_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new editListViewModel();
-        }
-
-        private void addWords_Click(object sender, RoutedEventArgs e)
-        {
-            DataContext = new addWordsViewModel();
         }
 
         public void changeToLoggedInMenu(string login)

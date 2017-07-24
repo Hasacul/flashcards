@@ -14,14 +14,8 @@
         <DataTemplate x:Name="LoginTemplate" DataType="{x:Type viewmodel:loginViewModel}">
             <views:loginView DataContext="{Binding}"></views:loginView>
         </DataTemplate>
-        <DataTemplate x:Name="AddListTemplate" DataType="{x:Type viewmodel:addListViewModel}">
-            <views:addListView DataContext="{Binding}"></views:addListView>
-        </DataTemplate>
         <DataTemplate x:Name="EditListTemplate" DataType="{x:Type viewmodel:editListViewModel}">
             <views:editListView DataContext="{Binding}"></views:editListView>
-        </DataTemplate>
-        <DataTemplate x:Name="AddWordsTemplate" DataType="{x:Type viewmodel:addWordsViewModel}">
-            <views:addWordsView DataContext="{Binding}"></views:addWordsView>
         </DataTemplate>
         <DataTemplate x:Name="testTemplate" DataType="{x:Type viewmodel:testViewModel}">
             <views:testView DataContext="{Binding}"></views:testView>
@@ -35,9 +29,6 @@
         <DataTemplate x:Name="startPracticeTemplate" DataType="{x:Type viewmodel:startPracticeViewModel}">
             <views:startPracticeView  DataContext="{Binding}"></views:startPracticeView>
         </DataTemplate>
-
-
-
         <DataTemplate x:Name="editSelectedListTemplate" DataType="{x:Type viewmodel:editSelectedListViewModel}">
             <views:editSelectedListView DataContext="{Binding}"></views:editSelectedListView>
         </DataTemplate>

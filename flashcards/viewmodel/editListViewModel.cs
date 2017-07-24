@@ -24,7 +24,7 @@ namespace Flashcards.viewmodel
             {
                 if (window.GetType() == typeof(MainWindow))
                 {
-                    (window as MainWindow).DataContext=new editSelectedListViewModel();
+                    (window as MainWindow).DataContext=new editSelectedListViewModel(v,_profile);
                 }
             }
         }
@@ -37,7 +37,7 @@ namespace Flashcards.viewmodel
 
         public void addNewList(string listName)
         {
-            _FM.saveFile(listName, _profile);
+            _FM.saveTextFile(listName, _profile);
             refreshList();
         }
 

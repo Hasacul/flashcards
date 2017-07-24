@@ -15,5 +15,10 @@ namespace Flashcards.files
             word1 = str1;
             word2 = str2;
         }
+
+        public string getPairTogetherString()
+        {
+            return word1 + "@" + word2;
+        }
     }
 }
