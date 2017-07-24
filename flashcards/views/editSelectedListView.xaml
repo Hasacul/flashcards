@@ -9,18 +9,35 @@
 
 
     <Grid>
-        <ListView ItemsSource="{Binding}" Grid.IsSharedSizeScope="True" x:Name="wordList" HorizontalAlignment="Left" Height="191" Margin="10,43,0,0" VerticalAlignment="Top" Width="213">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="110*"/>
+            <ColumnDefinition Width="110*"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <ListView ItemsSource="{Binding}" Grid.IsSharedSizeScope="True" x:Name="wordList" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Margin="10" >
 
             <ListView.View>
                 <GridView>
-                    <GridViewColumn x:Name="listViewGridHeader1" Header="Word 1" Width="105">
+                    <GridViewColumn x:Name="listViewGridHeader1" Header="Word 1"  Width="{Binding ActualWidth, ElementName=newPairWord1, Mode=OneWay}" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBox Text="{Binding word1}"></TextBox>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn x:Name="listViewGridHeader2" Header="Word 2" Width="105">
+                    <GridViewColumn x:Name="listViewGridHeader2" Header="Word 2"  Width="{Binding ActualWidth, ElementName=newPairWord2, Mode=OneWay}" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBox Text="{Binding word2}"></TextBox>
@@ -32,13 +49,13 @@
 
 
         </ListView>
-        <Button x:Name="addNewPairButton" Content="Add new &#xD;&#xA;pair" HorizontalAlignment="Left" Margin="232,250,0,0" VerticalAlignment="Top" Width="58" Height="40" Click="addNewPairButton_Click"/>
-        <Button x:Name="saveChangesButton" Content="Save" HorizontalAlignment="Left" Margin="228,43,0,0" VerticalAlignment="Top" Width="62" Click="saveChangesButton_Click"/>
-        <Button x:Name="cancelChangesButton" Content="Cancel" HorizontalAlignment="Left" Margin="228,112,0,0" VerticalAlignment="Top" Width="62" Click="cancelChangesButton_Click"/>
-        <TextBox x:Name="newPairWord1" HorizontalAlignment="Left" Height="23" Margin="10,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="89"/>
-        <TextBox x:Name="newPairWord2" HorizontalAlignment="Left" Height="23" Margin="116,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90"/>
-        <TextBlock x:Name="newPairLabel" HorizontalAlignment="Left" Margin="82,246,0,0" TextWrapping="Wrap" Text="New Pair:" VerticalAlignment="Top"/>
-        <Button x:Name="deleteButton" Content="Delete" HorizontalAlignment="Left" Margin="228,186,0,0" VerticalAlignment="Top" Width="62" Click="deleteButton_Click"/>
+        <Button x:Name="addNewPairButton" Content="Add new"  Click="addNewPairButton_Click" Grid.Column="3" Grid.Row="6" Grid.RowSpan="1" Margin="5,5,0,5" MaxHeight="50" MaxWidth="80" HorizontalAlignment="Left" Width="61"/>
+        <Button x:Name="saveChangesButton" Content="Save" Click="saveChangesButton_Click" Grid.Column="3" MaxHeight="50" MaxWidth="80" Grid.Row="1" Margin="5,5,0,5" HorizontalAlignment="Left" Width="61"   />
+        <Button x:Name="cancelChangesButton" Content="Cancel" Click="cancelChangesButton_Click" Grid.Column="3" MaxHeight="50" MaxWidth="80" Grid.Row="3" Margin="5,5,0,5" HorizontalAlignment="Left" Width="61" />
+        <TextBox x:Name="newPairWord1"  Grid.Row="6" Grid.RowSpan="1" Grid.Column="1" Margin="5"/>
+        <TextBox x:Name="newPairWord2"  Grid.Column="2" Grid.Row="6" Margin="5"/>
+        <TextBlock x:Name="newPairLabel" HorizontalAlignment="Left"  Text="New Pair:" Grid.ColumnSpan="2" Height="16" Width="49" Grid.Row="5" Grid.Column="1"/>
+        <Button x:Name="deleteButton" Content="Delete"  Click="deleteButton_Click" Grid.Column="3" MaxHeight="50" MaxWidth="80" Grid.Row="2" Margin="5,5,0,5" HorizontalAlignment="Left" Width="61"/>
 
     </Grid>
 </UserControl>

@@ -28,7 +28,7 @@ namespace Flashcards.views
 
         private void login_Click(object sender, RoutedEventArgs e)
         {
-            string userLogin = loginBox_Copy.Text;
+            string userLogin = loginBox.Text;
             loginViewModel loginVM = new loginViewModel();
             loginVM.setLoggedStatus(userLogin);
 

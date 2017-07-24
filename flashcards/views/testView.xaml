@@ -18,9 +18,9 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
-            <RowDefinition Height="77*"/>
-            <RowDefinition Height="83*"/>
+            <RowDefinition/>
             <RowDefinition Height="80"/>
+
         </Grid.RowDefinitions>
         <Label 
             Content="Choose test from the list :" 
@@ -31,14 +31,14 @@
             Height="30" 
             VerticalAlignment="Top" 
             Grid.Column="1"/>
-        <ListView 
+        <ListView x:Name="listView" 
             ItemsSource="{Binding ListViewItems}"
             Margin="9,0,5.066,0"
             Grid.Row="1" 
             Grid.Column="1">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Files"  Width="auto" DisplayMemberBinding="{Binding}"/>
+                    <GridViewColumn Header="Files"   DisplayMemberBinding="{Binding}" Width="{Binding ActualWidth, ElementName=listView, Mode=OneWay}" />
                 </GridView>
             </ListView.View>
         </ListView>
