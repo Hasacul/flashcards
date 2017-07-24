@@ -71,8 +71,6 @@
     </ApplicationDefinition>
     <Compile Include="files\listManager.cs" />
     <Compile Include="files\pairWords.cs" />
-    <Compile Include="viewmodel\addListViewModel.cs" />
-    <Compile Include="viewmodel\addWordsViewModel.cs" />
     <Compile Include="viewmodel\editListViewModel.cs" />
     <Compile Include="viewmodel\editSelectedListViewModel.cs" />
     <Compile Include="files\listOfListsClass.cs" />
@@ -81,12 +79,6 @@
     <Compile Include="viewmodel\startPracticeViewModel.cs" />
     <Compile Include="viewmodel\StartTestViewModel.cs" />
     <Compile Include="viewmodel\testViewModel.cs" />
-    <Compile Include="views\addListView.xaml.cs">
-      <DependentUpon>addListView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="views\addWordsView.xaml.cs">
-      <DependentUpon>addWordsView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="views\editListView.xaml.cs">
       <DependentUpon>editListView.xaml</DependentUpon>
     </Compile>
@@ -121,14 +113,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="views\addListView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="views\addWordsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="views\editListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
