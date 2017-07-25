@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Flashcards.viewmodel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,40 @@ namespace Flashcards.views
         public StartTestView()
         {
             InitializeComponent();
+        }
+        StartTestViewModel STVM = new StartTestViewModel();
+        string[] Pair = new string[2];
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            Pair=STVM.newPairTest();
+            BoxWord1.Text =Pair[0];
+            WrongAnswer.Visibility = Visibility.Hidden;
+            answer.Visibility = Visibility.Hidden;
+            CorrectAnswer.Visibility = Visibility.Hidden;
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (BoxWord2.Text != null)
+            {
+                bool correct;
+                correct = STVM.checkWords(Pair[1], BoxWord2.Text);
+
+                if (correct == true)
+                {
+                    CorrectAnswer.Visibility = Visibility.Visible;
+
+                }
+                else
+                {
+                    answer.Content = "Correct answer is " + Pair[1];
+                    WrongAnswer.Visibility = Visibility.Visible;
+                    answer.Visibility = Visibility.Visible;
+                }
+            }
         }
     }
 }
