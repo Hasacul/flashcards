@@ -30,20 +30,20 @@ namespace Flashcards.views
 
         private void StartTestClick(object sender, RoutedEventArgs e)
         {
-            foreach (Window window in Application.Current.Windows)
+            testViewModel TV = (testViewModel)DataContext;
+            fileManager FM = new fileManager();
+            string fileName;
+            if (listView.SelectedItem != null)
             {
-                if (window.GetType() == typeof(MainWindow))
+                fileName=listView.SelectedItem.ToString();
+                foreach (Window window in Application.Current.Windows)
                 {
-                    (window as MainWindow).DataContext = new StartTestViewModel();
+                    if (window.GetType() == typeof(MainWindow))
+                    {
+                        (window as MainWindow).DataContext = new StartTestViewModel(FM.getWordPairsFromFile(fileName,TV.getActiveProfile()));
+                    }
                 }
             }
-            
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-
         }
     }
 }

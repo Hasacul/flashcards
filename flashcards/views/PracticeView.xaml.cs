@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Flashcards.files;
+using Flashcards.viewmodel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,11 +29,18 @@ namespace Flashcards.views
 
         private void startPractice_Click(object sender, RoutedEventArgs e)
         {
-            foreach (Window window in Application.Current.Windows)
+            practiceViewModel PVM = (practiceViewModel)DataContext;
+            fileManager FM = new fileManager();
+            string fileName;
+            if (listView.SelectedItem != null)
             {
-                if (window.GetType() == typeof(MainWindow))
+                fileName = listView.SelectedItem.ToString();
+                foreach (Window window in Application.Current.Windows)
                 {
-                    (window as MainWindow).DataContext = new startPracticeView();
+                    if (window.GetType() == typeof(MainWindow))
+                    {
+                        (window as MainWindow).DataContext = new startPracticeViewModel(FM.getWordPairsFromFile(fileName, PVM.getActiveProfile()));
+                    }
                 }
             }
         }
