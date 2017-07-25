@@ -25,13 +25,13 @@ namespace Flashcards.views
         {
             InitializeComponent();
         }
-        StartTestViewModel STVM = new StartTestViewModel();
+       
         string[] Pair = new string[2];
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-            Pair=STVM.newPairTest();
+            StartTestViewModel STVM = (StartTestViewModel)DataContext;
+            Pair =STVM.newPairTest();
             BoxWord1.Text =Pair[0];
             WrongAnswer.Visibility = Visibility.Hidden;
             answer.Visibility = Visibility.Hidden;
@@ -43,6 +43,7 @@ namespace Flashcards.views
         {
             if (BoxWord2.Text != null)
             {
+                StartTestViewModel STVM = (StartTestViewModel)DataContext;
                 bool correct;
                 correct = STVM.checkWords(Pair[1], BoxWord2.Text);
 

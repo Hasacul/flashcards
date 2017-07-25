@@ -15,11 +15,11 @@ namespace Flashcards.viewmodel
         }
         public bool checkWords(string ConsoleInput, string UserInput)
         {
-            bool correctAnswer=0;
+            bool correctAnswer=false;
             UserInput.ToLower();
             if(ConsoleInput == UserInput)
             {
-                correctAnswer = 1;
+                correctAnswer = true;
                 return correctAnswer;
             }
             return correctAnswer;
