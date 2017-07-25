@@ -27,6 +27,11 @@ namespace Flashcards.files
             listWords.Add(pair);
         }
 
+        public void clearList()
+        {
+            listWords.Clear();
+        }
+
         public void deleteItem(string searchWord1, string searchWord2)
         {
             searchWord1.ToLower();
@@ -46,6 +51,11 @@ namespace Flashcards.files
                 }
                 index++;
             }
+        }
+
+        public ObservableCollection<pairWords> getObservablePairWords()
+        {
+            return new ObservableCollection<pairWords>(listWords);
         }
         
     }

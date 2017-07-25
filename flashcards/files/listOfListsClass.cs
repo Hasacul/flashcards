@@ -35,5 +35,10 @@ namespace Flashcards.viewmodel
             }
 
         }
+
+        public string getActiveProfile()
+        {
+            return _profile;
+        }
     }
 }

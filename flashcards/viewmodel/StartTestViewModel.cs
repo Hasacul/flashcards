@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Flashcards.files;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,9 @@ namespace Flashcards.viewmodel
 {
     public class StartTestViewModel
     {
-        public StartTestViewModel()
+        public StartTestViewModel(List<pairWords> list)
         {
-            
+
         }
         public bool checkWords(string ConsoleInput, string UserInput)
         {
@@ -38,5 +39,6 @@ namespace Flashcards.viewmodel
 
         }
         
+       
     }
 }
