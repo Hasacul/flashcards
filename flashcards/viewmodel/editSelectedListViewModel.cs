@@ -27,7 +27,8 @@ namespace Flashcards.viewmodel
             _profile = profile;
             List<pairWords> pairListFromFile = FM.getWordPairsFromFile(_fileName, _profile);
             lm.SetList(pairListFromFile);
-            observableList = lm.getObservablePairWords();
+            observableList = new ObservableCollection<pairWords>(pairListFromFile);
+            //observableList = lm.getObservablePairWords();
         }
 
         public void addPair(string userInput1, string userInput2)
@@ -37,10 +38,12 @@ namespace Flashcards.viewmodel
 
         public void showList (ListView Wordlist)
         {
-            lm.clearList();
+            //lm.clearList();
+            observableList.Clear();
             foreach (pairWords opairWords in lm.getList())
             {
-                lm.addItem(opairWords);
+                //lm.addItem(opairWords);
+                observableList.Add(opairWords);
             }
         }
 

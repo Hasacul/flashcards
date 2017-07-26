@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -59,14 +60,21 @@ namespace Flashcards.viewmodel
             }
             else
             {
-                FC.createNewProfile(login);
-                loginUserName = login;
-                foreach (Window window in Application.Current.Windows)
+                if (Regex.IsMatch(login, "^[a-zA-Z0-9_]+$"))
                 {
-                    if (window.GetType() == typeof(MainWindow))
+                    FC.createNewProfile(login);
+                    loginUserName = login;
+                    foreach (Window window in Application.Current.Windows)
                     {
-                        (window as MainWindow).changeToLoggedInMenu(login);
+                        if (window.GetType() == typeof(MainWindow))
+                        {
+                            (window as MainWindow).changeToLoggedInMenu(login);
+                        }
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid profile name, profile name should contain only alphanymerical characters and underscore.");
                 }
             }
         }
