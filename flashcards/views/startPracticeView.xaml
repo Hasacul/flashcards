@@ -8,53 +8,43 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="40*"/>
-            <ColumnDefinition Width="230*"/>
-            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="38*"/>
+            <ColumnDefinition Width="110*"/>
+            <ColumnDefinition Width="110*"/>
+            <ColumnDefinition Width="39*"/>
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="50*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30*"/>
         </Grid.RowDefinitions>
+        <Label x:Name="countOfCorrectAnswer"
+            FontSize="11" 
+            Grid.Column="1" 
+            Grid.Row="1" Width="{Binding ActualWidth, ElementName=button1, Mode=OneWay}" Height="{Binding ActualHeight, ElementName=button1, Mode=OneWay}" HorizontalAlignment="Right" Margin="0,1,10,23.59" Grid.RowSpan="2"
+            
+            />
+        <Label x:Name="countOfWrongAnswer"
+            FontSize="11" 
+            Grid.Column="2" 
+            Grid.Row="1" Width="{Binding ActualWidth, ElementName=button, Mode=OneWay}" Height="{Binding ActualHeight, ElementName=button, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,1,0,23.59" Grid.RowSpan="2"
+            />
         <Label 
             Content="Translate the word" 
             FontSize="18" 
-            Margin="10,0,10,0" 
+            Margin="10,0.41,10,49.59" 
             Grid.Column="1" 
-            Grid.Row="1"
+            Grid.Row="2"
              MaxHeight="40" 
-            MaxWidth="400"
+            MaxWidth="400" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" Grid.RowSpan="2"
             />
-        <TextBox 
-            Margin="10,10,10,10" 
-            Grid.Row="2"  
-            Grid.Column="1" 
-            MaxHeight="40" 
-            MaxWidth="400"
-            />
-        <TextBox 
-            Margin="10,10,10,10" 
-            Grid.Row="3"  
-            Grid.Column="1" 
-            MaxHeight="40" 
-            MaxWidth="400" 
-            />
-        <Button 
-            Content="Check" 
-            Grid.Row="4" 
-            Grid.Column="1" 
-            FontSize="18" 
-            Margin="10,0,10,0" 
-            Width="Auto" 
-            MaxWidth="400"  
-            MaxHeight="30"
-            />
-        <Label
+        <Label 
             Content="Practice" 
             FontSize="18" 
             Margin="10,0,10,0" 
@@ -62,7 +52,81 @@
             Grid.Row="0"
             MaxHeight="40" 
             MaxWidth="400" 
-            HorizontalContentAlignment="Center"
-        />
+            HorizontalContentAlignment="Center" 
+            Grid.ColumnSpan="2" Grid.RowSpan="1" Height="31" VerticalAlignment="Bottom"
+            />
+        <Label x:Name="CorrectAnswer" 
+            Content="Correct Answer!" 
+            FontSize="15" 
+            Margin="10,0" 
+            Grid.Column="1" 
+            Grid.Row="6"     
+            HorizontalContentAlignment="Center" 
+            Grid.ColumnSpan="2" 
+            Grid.RowSpan="1"           
+            VerticalAlignment="Top" 
+            Visibility="Hidden"
+            
+            />
+        <Label x:Name="WrongAnswer" 
+            Content="Wrong!" 
+            FontSize="15" 
+            Margin="10,0,10,0" 
+            Grid.Column="1" 
+            Grid.Row="6"           
+            HorizontalContentAlignment="Center" 
+            Grid.ColumnSpan="2" 
+            Grid.RowSpan="1"             
+            VerticalAlignment="Top" 
+            Visibility="Hidden"
+            
+            />
+        <Label x:Name="answer" 
+            
+            FontSize="13" 
+            Margin="10,5.41,10,0" 
+            Grid.Column="1" 
+            Grid.Row="7"
+            HorizontalContentAlignment="Center" 
+            Grid.ColumnSpan="2" 
+            Grid.RowSpan="1" 
+            VerticalAlignment="Top" 
+            Visibility="Hidden"
+               
+            />
+        <TextBox x:Name="BoxWord1" 
+            Text="To start click next"
+            Margin="10,10.41,10,9.59" 
+            Grid.Row="3"  
+            Grid.Column="1" 
+            MaxHeight="40" 
+            MaxWidth="400" Grid.ColumnSpan="2" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+            />
+        <TextBox x:Name="BoxWord2" 
+            Margin="10,10.41,10,9.59" 
+            Grid.Row="4"  
+            Grid.Column="1" 
+            MaxHeight="40" 
+            MaxWidth="400" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" 
+            />
+        <Button x:Name="button1" 
+            Content="Check" 
+            Grid.Row="5" 
+            Grid.Column="1" 
+            FontSize="18" 
+            Margin="0,0.41,10,31" 
+            MaxWidth="200"  
+            MaxHeight="30" Click="check_Click_1" HorizontalAlignment="Right" Width="91" Grid.RowSpan="2"
+            />
+        <Button x:Name="button" 
+            Content="Next" 
+            Grid.Row="5" 
+            Grid.Column="2" 
+            FontSize="18" 
+            Margin="10,0.41,0,31" 
+            Width="91" 
+            MaxWidth="200"  
+            MaxHeight="30" Click="next_Click" HorizontalAlignment="Left" Grid.RowSpan="2"
+            />
     </Grid>
 </UserControl>

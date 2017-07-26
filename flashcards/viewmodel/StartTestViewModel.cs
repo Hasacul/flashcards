@@ -9,35 +9,53 @@ namespace Flashcards.viewmodel
 {
     public class StartTestViewModel
     {
+        List<pairWords> testList = new List<pairWords>();
+        int index;
+        public int COWA=0, COCA=0;
+        public bool StartTest = false;
+        public bool EndTest = false;
+        public bool checkedWord = true;
         public StartTestViewModel(List<pairWords> list)
         {
-
+            testList = list;
         }
         public bool checkWords(string ConsoleInput, string UserInput)
         {
-            bool correctAnswer=false;
+
+            bool correctAnswer = false;
             UserInput.ToLower();
-            if(ConsoleInput == UserInput)
+            testList.RemoveAt(index);
+            checkedWord = true;
+            if (ConsoleInput == UserInput)
             {
                 correctAnswer = true;
+                COCA++;
                 return correctAnswer;
             }
+            COWA++;
             return correctAnswer;
+
         }
+
 
         public string[] newPairTest()
         {
-            int index;
             string[] randomWord = new string[2];
-            Random random = new Random();
+            randomWord[0] = null;
+            randomWord[1] = null;
+            checkedWord = false;
+            if (testList.Count != 0)
+            {
+                StartTest = true;
 
-            index = random.Next(0, 10);
-
-            randomWord[0] = "a";
-            randomWord[1] = "b";
+                Random random = new Random();
+                index = random.Next(0, testList.Count);
+                randomWord[0] = testList[index].word1;
+                randomWord[1] = testList[index].word2;
+            }
             return randomWord;
-
-        }
+        } 
+        
         
        
     }
