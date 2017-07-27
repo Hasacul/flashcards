@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -63,11 +64,20 @@ namespace Flashcards.files
 
         public List<pairWords> getWordPairsFromFile(string fileName, string profile)
         {
-            if (profile != null && (profile.Length > 0 && fileName.Length > 0))
+            if (fileName.Length > 0)
             {
                 if (doesFileExist(fileName, profile))
                 {
-                    string filePath = this.folderLocation + profile + "/" + fileName;
+                    string filePath;
+                    if (profile != null)
+                    {
+                        filePath = this.folderLocation + profile + "/" + fileName;
+
+                    }
+                    else
+                    {
+                        filePath = this.folderLocation + fileName;
+                    }
                     List<pairWords> returnedList= new List<pairWords>();
                     string[] wordsTable;
                     FileInfo file = new FileInfo(filePath);
@@ -110,11 +120,18 @@ namespace Flashcards.files
 
         public void createNewProfile(string profileName)
         {
-            if (!this.doesProfileExists(profileName, this.getProfiles()))
-            {
-                DirectoryInfo DirInfo = new DirectoryInfo(this.folderLocation);
-                DirInfo.CreateSubdirectory(profileName);
-            }
+                if (!this.doesProfileExists(profileName, this.getProfiles()))
+                {
+                    DirectoryInfo DirInfo = new DirectoryInfo(this.folderLocation);
+                    try
+                    {
+                        DirInfo.CreateSubdirectory(profileName);
+                    }
+                    catch(Exception e)
+                    {
+                        MessageBox.Show("Invalid profile name, profile should contain only alphanymerical characters.");
+                    }
+                }
         }
 
         public List<String> getProfiles()
@@ -175,7 +192,14 @@ namespace Flashcards.files
                     MessageBoxResult result= MessageBox.Show("Confirm: Deleting file " + fileName + " from profile " + profile+"?","Delete File",MessageBoxButton.YesNo);
                     if (result == MessageBoxResult.Yes)
                     {
-                        File.Delete(this.folderLocation + profile + "/" + fileName);
+                        try
+                        {
+                            File.Delete(this.folderLocation + profile + "/" + fileName);
+                        }
+                        catch(Exception e)
+                        {
+                            MessageBox.Show("File is used right now. " + e.ToString());
+                        }
                     }
                 } 
             }

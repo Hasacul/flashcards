@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace Flashcards.viewmodel
@@ -27,20 +29,31 @@ namespace Flashcards.viewmodel
             _profile = profile;
             List<pairWords> pairListFromFile = FM.getWordPairsFromFile(_fileName, _profile);
             lm.SetList(pairListFromFile);
-            observableList = lm.getObservablePairWords();
+            observableList = new ObservableCollection<pairWords>(pairListFromFile);
+            //observableList = lm.getObservablePairWords();
         }
 
         public void addPair(string userInput1, string userInput2)
-        { 
-            lm.addItem(new pairWords(userInput1, userInput2));
+        {
+            //if(Regex.IsMatch(userInput1, "^[a-zA-Z0-9_ ,?!`']*$")&& Regex.IsMatch(userInput2, "^[a-zA-Z0-9_ ,?!`']*$"))
+            if (Regex.IsMatch(userInput1, "^[^!@#$%&*()~{}:;\"\\/\\\\><+=']+$") && Regex.IsMatch(userInput2, "^[^!@#$%&*()~{}:;\"\\/\\\\><+=']+$"))
+            {
+                lm.addItem(new pairWords(userInput1, userInput2));
+            }
+            else
+            {
+                MessageBox.Show("Invalid characters in add new words.");
+            }
         }
 
         public void showList (ListView Wordlist)
         {
-            lm.clearList();
+            //lm.clearList();
+            observableList.Clear();
             foreach (pairWords opairWords in lm.getList())
             {
-                lm.addItem(opairWords);
+                //lm.addItem(opairWords);
+                observableList.Add(opairWords);
             }
         }
 
