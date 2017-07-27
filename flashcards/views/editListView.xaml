@@ -9,14 +9,14 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="40*"/>
             <ColumnDefinition Width="12*"/>
             <ColumnDefinition Width="61*"/>
             <ColumnDefinition Width="63*"/>
             <ColumnDefinition Width="62*"/>
             <ColumnDefinition Width="49*"/>
             <ColumnDefinition Width="13*"/>
-            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="40*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
