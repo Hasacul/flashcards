@@ -15,6 +15,7 @@ namespace Flashcards.viewmodel
         public bool StartPractice = false;
         public bool endPractice = false;
         public bool checkedWord = true;
+        public bool nextWord = false;
         public startPracticeViewModel(List<pairWords> list)
         {
             practiceList = list;
@@ -23,16 +24,20 @@ namespace Flashcards.viewmodel
         {
 
             bool correctAnswer = false;
-            UserInput.ToLower();
-            checkedWord = true;
-            if (ConsoleInput == UserInput)
+            if (nextWord)
             {
-                correctAnswer = true;
-                practiceList.RemoveAt(index);
-                COCA++;
-                return correctAnswer;
+                UserInput.ToLower();
+                checkedWord = true;
+                if (ConsoleInput == UserInput)
+                {
+                    correctAnswer = true;
+                    practiceList.RemoveAt(index);
+                    COCA++;
+                    return correctAnswer;
+                }
+                COWA++;
             }
-            COWA++;
+            nextWord = false;
             return correctAnswer;
 
         }
@@ -44,6 +49,7 @@ namespace Flashcards.viewmodel
             randomWord[0] = null;
             randomWord[1] = null;
             checkedWord = false;
+            nextWord = true;
             if (practiceList.Count != 0)
             {
                 StartPractice = true;

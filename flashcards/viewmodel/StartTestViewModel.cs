@@ -15,24 +15,31 @@ namespace Flashcards.viewmodel
         public bool StartTest = false;
         public bool EndTest = false;
         public bool checkedWord = true;
+        public bool nextWord = false;
         public StartTestViewModel(List<pairWords> list)
         {
             testList = list;
         }
         public bool checkWords(string ConsoleInput, string UserInput)
         {
-
             bool correctAnswer = false;
-            UserInput.ToLower();
-            testList.RemoveAt(index);
-            checkedWord = true;
-            if (ConsoleInput == UserInput)
+            if (nextWord)
             {
-                correctAnswer = true;
-                COCA++;
-                return correctAnswer;
+
+                UserInput.ToLower();
+                testList.RemoveAt(index);
+                checkedWord = true;
+
+
+                if (ConsoleInput == UserInput)
+                {
+                    correctAnswer = true;
+                    COCA++;
+                    return correctAnswer;
+                }
+                COWA++;
             }
-            COWA++;
+            nextWord = false;
             return correctAnswer;
 
         }
@@ -44,6 +51,7 @@ namespace Flashcards.viewmodel
             randomWord[0] = null;
             randomWord[1] = null;
             checkedWord = false;
+            nextWord = true;
             if (testList.Count != 0)
             {
                 StartTest = true;
