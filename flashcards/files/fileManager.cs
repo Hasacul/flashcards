@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Flashcards.files
@@ -12,9 +9,8 @@ namespace Flashcards.files
     public class fileManager
     {
         protected string fileName;
-        protected string[] fileContent;                                         //variable for saving into file
-        List<string> fileContents = new List<string>();                         //list of pairs
-        public string folderLocation = "profiles/";                             //main folder
+        List<string> fileContents = new List<string>();
+        public string folderLocation = "profiles/";
 
         public void saveTextFile(string fileName,string profile)
         {
@@ -79,7 +75,7 @@ namespace Flashcards.files
                         filePath = this.folderLocation + fileName;
                     }
                     List<pairWords> returnedList= new List<pairWords>();
-                    string[] wordsTable;
+                    string[] wordsFromTable;
                     FileInfo file = new FileInfo(filePath);
                     this.fileContents.Clear();
                     try
@@ -87,10 +83,10 @@ namespace Flashcards.files
                         var lines = File.ReadAllLines(filePath);
                         foreach (var line in lines)
                         {
-                            wordsTable=line.Split('@');
-                            if (wordsTable.Length == 2)
+                            wordsFromTable=line.Split('@');
+                            if (wordsFromTable.Length == 2)
                             {
-                                returnedList.Add(new pairWords(wordsTable[0],wordsTable[1]));
+                                returnedList.Add(new pairWords(wordsFromTable[0],wordsFromTable[1]));
                             }
                         }
                     }
@@ -136,7 +132,7 @@ namespace Flashcards.files
 
         public List<String> getProfiles()
         {
-            Directory.CreateDirectory(folderLocation);                                                          //creates profiles if not exists
+            Directory.CreateDirectory(folderLocation);
             string[] directories = Directory.GetDirectories(folderLocation);
             return directories.ToList();
         }

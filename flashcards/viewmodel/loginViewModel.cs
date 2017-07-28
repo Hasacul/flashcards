@@ -1,10 +1,5 @@
 ﻿using Flashcards.files;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Flashcards.viewmodel
@@ -30,11 +25,6 @@ namespace Flashcards.viewmodel
             {
                 return false;
             }
-        }
-
-        public bool getLoginStatus()
-        {
-            return _loggedIn;
         }
 
         public string getLoginUserName()

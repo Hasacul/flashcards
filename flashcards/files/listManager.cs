@@ -26,37 +26,5 @@ namespace Flashcards.files
             pair.word2.ToLower();
             listWords.Add(pair);
         }
-
-        public void clearList()
-        {
-            listWords.Clear();
-        }
-
-        public void deleteItem(string searchWord1, string searchWord2)
-        {
-            searchWord1.ToLower();
-            searchWord2.ToLower();
-
-            int index = 0;
-            foreach (pairWords opairWords in listWords)
-            {
-
-                if (opairWords.word1 == searchWord1 || opairWords.word2 == searchWord1)
-                {
-                    if (opairWords.word1 == searchWord2 || opairWords.word2 == searchWord2)
-                    {
-                        listWords.RemoveAt(index);
-                        break;
-                    }
-                }
-                index++;
-            }
-        }
-
-        public ObservableCollection<pairWords> getObservablePairWords()
-        {
-            return new ObservableCollection<pairWords>(listWords);
-        }
-        
     }
 }

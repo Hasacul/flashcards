@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Flashcards.files
+﻿namespace Flashcards.files
 {
-   public class pairWords
+    public class pairWords
     {
        public string word1 { get; set; }
        public string word2 { get; set; }
