@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="Flashcards.views.editSelectedListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="110*"/>
+            <ColumnDefinition Width="110*"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <ListView ItemsSource="{Binding observableList}" Grid.IsSharedSizeScope="True" x:Name="wordList" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Margin="10" >
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="listViewGridHeader1" Header="Word 1"  Width="{Binding ActualWidth, ElementName=newPairWord1, Mode=OneWay}" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding word1}"></TextBox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn x:Name="listViewGridHeader2" Header="Word 2"  Width="{Binding ActualWidth, ElementName=newPairWord2, Mode=OneWay}" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding word2}"></TextBox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+
+
+        </ListView>
+        <Button x:Name="addNewPairButton" Content="Add new"  Click="addNewPairButton_Click" Grid.Column="3" Grid.Row="6" Grid.RowSpan="1" Margin="5,5,0,5" MaxHeight="50" MaxWidth="80" HorizontalAlignment="Left" Width="61"/>
+        <Button x:Name="saveChangesButton" Content="Save" Click="saveChangesButton_Click" Grid.Column="3" MaxHeight="50" MaxWidth="80" Grid.Row="1" Margin="5,5,0,5" HorizontalAlignment="Left" Width="61"   />
+        <Button x:Name="cancelChangesButton" Content="Cancel" Click="cancelChangesButton_Click" Grid.Column="3" MaxHeight="50" MaxWidth="80" Grid.Row="3" Margin="5,5,0,5" HorizontalAlignment="Left" Width="61" />
+        <TextBox x:Name="newPairWord1"  Grid.Row="6" Grid.RowSpan="1" Grid.Column="1" Margin="20,5,5,5"/>
+        <TextBox x:Name="newPairWord2"  Grid.Column="2" Grid.Row="6" Margin="5,5,20,5"/>
+        <TextBlock x:Name="newPairLabel" HorizontalAlignment="Left"  Text="New Pair:" Grid.ColumnSpan="2" Height="16" Width="49" Grid.Row="5" Grid.Column="1"/>
+        <Button x:Name="deleteButton" Content="Delete"  Click="deleteButton_Click" Grid.Column="3" MaxHeight="50" MaxWidth="80" Grid.Row="2" Margin="5,5,0,5" HorizontalAlignment="Left" Width="61"/>
+
+    </Grid>
+</UserControl>
