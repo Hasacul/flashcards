@@ -139,6 +139,7 @@ namespace Flashcards.files
 
         public List<String> getFiles(string profile)
         {
+            Directory.CreateDirectory(folderLocation);
             List<string> fil = new List<string>();
             string[] files = Directory.GetFiles(this.folderLocation + profile);
             for(int i = 0; i < files.Length; i++)
